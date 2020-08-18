@@ -9,6 +9,7 @@ git submodule update
 useronly=(
     git
     shell
+    tmux
     neovim
     alacritty
 )
