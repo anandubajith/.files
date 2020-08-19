@@ -47,7 +47,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'		" For git indicators in NerdTree
 Plug 'itchyny/lightline.vim' 			" We need cool statusline
 Plug 'tpope/vim-commentary' 			" Easier commenting
 "Plug 'morhetz/gruvbox'
-Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/goyo.vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'ThePrimeagen/vim-be-good'
@@ -56,7 +55,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'vimwiki/vimwiki'                  " we want notes
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
+
+
+xnoremap <C-\> gc
 
 " I think these are required for prettier config
 colorscheme atom-dark 
@@ -94,9 +97,6 @@ xnoremap <C-\> gc
 " Startify
 let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 
-" Floatterm
-tnoremap <Esc> <C-\><C-n>
-nmap <leader>t :FloatermToggle<C,>
 "CPP 
 autocmd filetype cpp nnoremap <C-r> :w <bar> te g++ -std=c++14 % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype python nnoremap <C-r> :w <bar> te python %<CR> <ESC> :startinsert <CR>
