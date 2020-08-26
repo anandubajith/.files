@@ -6,6 +6,7 @@
 " General Settings
 " ----------------
 let mapleader = ","				" Setup leader key
+set number
 set relativenumber					
 set fillchars+=vert:\ 				" Get cleaner split separators
 set clipboard=unnamedplus
@@ -47,7 +48,8 @@ Plug 'itchyny/lightline.vim' 			" We need cool statusline
 Plug 'tpope/vim-commentary' 			" Easier commenting
 "Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
-Plug 'gosukiwi/vim-atom-dark'
+"Plug 'gosukiwi/vim-atom-dark'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'posva/vim-vue'                    " Vue 
 Plug 'leafgarland/typescript-vim'
@@ -61,15 +63,21 @@ call plug#end()
 xnoremap <C-\> gc
 
 " I think these are required for prettier config
-colorscheme atom-dark 
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+colorscheme dracula 
 set background=dark termguicolors cursorline
+highlight CursorLine guibg=#44475a ctermbg=234
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
 " Plugin specific configs 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-let g:lightline = { 'colorscheme': 'wombat' }
+" let g:lightline = { 'colorscheme': 'wombat' }
 
 highlight Pmenu ctermbg=blue guibg=gray
 
