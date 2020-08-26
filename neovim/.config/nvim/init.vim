@@ -44,7 +44,8 @@ Plug 'mhinz/vim-startify' 			    " Startup screen
 Plug 'ctrlpvim/ctrlp.vim'		        " Fuzzy finding
 Plug 'preservim/nerdtree'			    " we need a fileBrowser
 Plug 'Xuyuanp/nerdtree-git-plugin'		" For git indicators in NerdTree
-Plug 'itchyny/lightline.vim' 			" We need cool statusline
+"Plug 'itchyny/lightline.vim' 			" We need cool statusline
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary' 			" Easier commenting
 "Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
@@ -78,6 +79,9 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " let g:lightline = { 'colorscheme': 'wombat' }
+
+let g:airline_theme='dracula'
+let g:airline_powerline_fonts = 1
 
 highlight Pmenu ctermbg=blue guibg=gray
 
@@ -118,10 +122,10 @@ source $HOME/.config/nvim/coc.vim
 
 " Autosouce the config file on update
 augroup autosourcing
-	autocmd!
-	autocmd BufWritePost init.vim source %
+  autocmd!
+  autocmd BufWritePost init.vim source %
 augroup END
 " NOTES
 " " then register name, and you can paste through registers
-" Ctrl+6 to toggle between edit points 
+" Ctrl+6 to toggle between edit points
 " zz to center the current line
