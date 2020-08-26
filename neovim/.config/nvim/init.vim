@@ -14,7 +14,7 @@ highlight LineNr ctermfg=Blue
 set hlsearch
 set incsearch
 set ignorecase					
-set shiftwidth=4 autoindent smartindent tabstop=4 softtabstop=4 expandtab  
+set shiftwidth=2 autoindent smartindent tabstop=2 softtabstop=2 expandtab  
 set cursorline
 set backspace=indent,eol,start confirm
 
@@ -41,7 +41,6 @@ nnoremap Q <nop>
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify' 			    " Startup screen
 Plug 'ctrlpvim/ctrlp.vim'		        " Fuzzy finding
-Plug 'harenome/vim-mipssyntax'
 Plug 'preservim/nerdtree'			    " we need a fileBrowser
 Plug 'Xuyuanp/nerdtree-git-plugin'		" For git indicators in NerdTree
 Plug 'itchyny/lightline.vim' 			" We need cool statusline
@@ -101,6 +100,7 @@ let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 autocmd filetype cpp nnoremap <C-r> :w <bar> te g++ -std=c++14 % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype python nnoremap <C-r> :w <bar> te python %<CR> <ESC> :startinsert <CR>
 autocmd filetype asm nnoremap <C-r> :w <bar> te make Q_NO=%:r && ./%:r.out<CR> <ESC> :startinsert <CR>
+autocmd filetype vimwiki nnoremap <C-r> :MarkdownPreview<CR>
 
 " Putting coc config separate
 source $HOME/.config/nvim/coc.vim
