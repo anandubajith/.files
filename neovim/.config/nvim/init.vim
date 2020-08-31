@@ -54,7 +54,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'posva/vim-vue'                    " Vue 
 Plug 'leafgarland/typescript-vim'
-Plug 'vimwiki/vimwiki'                  " we want notes
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -100,8 +99,6 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:10'
 " NerdTree
 map <C-b> :NERDTreeToggle<CR>
 nnoremap <leader>ec :tabnew $MYVIMRC<CR>	" Make editing the config easier
-" vimWiki
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 " Commenting
 xnoremap <C-\> gc
 
@@ -112,7 +109,7 @@ let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 autocmd filetype cpp nnoremap <C-r> :w <bar> te g++ -std=c++14 % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype python nnoremap <C-r> :w <bar> te python %<CR> <ESC> :startinsert <CR>
 autocmd filetype asm nnoremap <C-r> :w <bar> te make Q_NO=%:r && ./%:r.out<CR> <ESC> :startinsert <CR>
-autocmd filetype vimwiki nnoremap <C-r> :MarkdownPreview<CR>
+autocmd filetype markdown nnoremap <C-r> :MarkdownPreview<CR>
 
 " Putting coc config separate
 source $HOME/.config/nvim/coc.vim
