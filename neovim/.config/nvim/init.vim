@@ -43,7 +43,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify' 			    " Startup screen
 Plug 'preservim/nerdtree'			    " we need a fileBrowser
 Plug 'Xuyuanp/nerdtree-git-plugin'		" For git indicators in NerdTree
-"Plug 'itchyny/lightline.vim' 			" We need cool statusline
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary' 			" Easier commenting
 "Plug 'morhetz/gruvbox'
@@ -101,7 +100,7 @@ nnoremap <leader>ec :tabnew $MYVIMRC<CR>	" Make editing the config easier
 " Startify
 let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 
-"CPP 
+" Run commands 
 autocmd filetype cpp nnoremap <C-r> :w <bar> te g++ -std=c++14 % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype python nnoremap <C-r> :w <bar> te python %<CR> <ESC> :startinsert <CR>
 autocmd filetype asm nnoremap <C-r> :w <bar> te make Q_NO=%:r && ./%:r.out<CR> <ESC> :startinsert <CR>
