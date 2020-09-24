@@ -41,7 +41,6 @@ nnoremap Q <nop>
 " -------
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify' 			    " Startup screen
-Plug 'ctrlpvim/ctrlp.vim'		        " Fuzzy finding
 Plug 'preservim/nerdtree'			    " we need a fileBrowser
 Plug 'Xuyuanp/nerdtree-git-plugin'		" For git indicators in NerdTree
 "Plug 'itchyny/lightline.vim' 			" We need cool statusline
@@ -50,12 +49,14 @@ Plug 'tpope/vim-commentary' 			" Easier commenting
 "Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
 "Plug 'gosukiwi/vim-atom-dark'
+Plug 'junegunn/fzf.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'posva/vim-vue'                    " Vue 
 Plug 'leafgarland/typescript-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'happycoder97/expos-vim-plugins'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
@@ -75,9 +76,6 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
 " Plugin specific configs 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-" let g:lightline = { 'colorscheme': 'wombat' }
 
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
@@ -89,18 +87,16 @@ highlight Pmenu ctermbg=blue guibg=gray
 " --------
 " I don't want to mistype
 command! Q :q
+command! W :w
 
-" CtrlP
-let g:ctrlp_map = '<C-P>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:10'
+" FZF
+nnoremap <silent> <C-p> :GFiles<CR>
+nnoremap <silent> <C-o> :Buffers<CR>
+nnoremap <C-f> :Rg! 
 
-
-" NerdTree
-map <C-b> :NERDTreeToggle<CR>
 nnoremap <leader>ec :tabnew $MYVIMRC<CR>	" Make editing the config easier
 " Commenting
-xnoremap <C-\> gc
+"nnoremap <C-\> gc
 
 " Startify
 let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
