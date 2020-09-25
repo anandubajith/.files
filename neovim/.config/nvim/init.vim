@@ -5,6 +5,8 @@
 " 
 " General Settings
 " ----------------
+" Trying jj to esc thing
+inoremap jj <esc>
 let mapleader = ","				" Setup leader key
 set number
 set relativenumber					
@@ -22,6 +24,9 @@ set backspace=indent,eol,start confirm
 "faster scrolling
 set ttyfast
 set lazyredraw
+if has('mouse')
+  set mouse=a
+endif
 nmap <leader><space> :nohlsearch<cr>
 
 " Split Management
