@@ -1,5 +1,5 @@
 "
-" Anandu B Ajith
+" Anandu B Ajith <mail@anandu.net> (https://anandu.net)
 "
 
 " 
@@ -24,9 +24,7 @@ set backspace=indent,eol,start confirm
 "faster scrolling
 set ttyfast
 set lazyredraw
-if has('mouse')
-  set mouse=a
-endif
+set mouse=a
 nmap <leader><space> :nohlsearch<cr>
 
 " Split Management
@@ -40,7 +38,9 @@ set splitright
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap Q <nop>
-
+" I don't want to mistype
+command! Q :q
+command! W :w
 "
 " Plugins
 " -------
@@ -81,17 +81,22 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 " Plugin specific configs 
 
+" vim-airline
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
-
+let g:airline#extensions#tabline#enabled = 1           " enable airline tabline                                                           
+let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline                                            
+let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
+let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)      
+let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab                                                    
+let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the tab  
+let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline                                                 
+let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs needed to display the tabline                                  
+let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline               
+let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers                                                              
+let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 highlight Pmenu ctermbg=blue guibg=gray
 
-" 
-" Mappings
-" --------
-" I don't want to mistype
-command! Q :q
-command! W :w
 
 " FZF
 nnoremap <silent> <C-p> :GFiles<CR>
