@@ -4,16 +4,13 @@
 
 " 
 " General Settings
-" ----------------
-" Trying jj to esc thing
+" ---------------- Trying jj to esc thing
 inoremap jj <esc>
 let mapleader = ","				" Setup leader key
 set number
 set relativenumber					
 set fillchars+=vert:\ 				" Get cleaner split separators
-set clipboard=unnamedplus
-highlight LineNr ctermfg=Blue
-" Searching
+set clipboard=unnamedplus highlight LineNr ctermfg=Blue " Searching
 set hlsearch
 set incsearch
 set ignorecase					
@@ -96,7 +93,9 @@ let g:airline#extensions#tabline#show_splits = 0       " disables the buffer nam
 let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers                                                              
 let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 highlight Pmenu ctermbg=blue guibg=gray
-
+set noshowmode
+set noruler
+set noshowcmd
 
 " FZF
 nnoremap <silent> <C-p> :GFiles<CR>
@@ -118,6 +117,7 @@ autocmd filetype markdown nnoremap <C-r> :MarkdownPreview<CR>
 
 " Putting coc config separate
 source $HOME/.config/nvim/coc.vim
+set cmdheight=1
 " 
 " AutoCommands
 " ------------
