@@ -1,7 +1,7 @@
 window:
   dynamic_title: true
   dimensions:
-    columns: 150
+    columns: 180
     lines: 60
   padding:
     x: 6
