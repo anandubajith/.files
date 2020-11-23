@@ -1,7 +1,7 @@
 "
 " Anandu B Ajith <mail@anandu.net> (https://anandu.net)
 "
-
+autocmd BufNewFile,BufRead *.sage set syntax=python
 " 
 " General Settings
 " ---------------- Trying jj to esc thing
@@ -10,7 +10,8 @@ let mapleader = ","				" Setup leader key
 set number
 set relativenumber					
 set fillchars+=vert:\ 				" Get cleaner split separators
-set clipboard=unnamedplus highlight LineNr ctermfg=Blue " Searching
+set clipboard=unnamedplus
+highlight LineNr ctermfg=Blue " Searching
 set hlsearch
 set incsearch
 set ignorecase					
@@ -111,13 +112,16 @@ let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 
 " Run commands 
 autocmd filetype cpp nnoremap <C-r> :w <bar> te g++ -std=c++14 % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
-autocmd filetype python nnoremap <C-r> :w <bar> te python %<CR> <ESC> :startinsert <CR>
+autocmd filetype c nnoremap <C-r> :w <bar> te gcc -lm -pthread % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
+autocmd filetype python nnoremap <C-r> :w <bar> split <bar> resize 8 <bar> te python %<CR> <ESC> :startinsert <CR>
 autocmd filetype asm nnoremap <C-r> :w <bar> te make Q_NO=%:r && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype markdown nnoremap <C-r> :MarkdownPreview<CR>
 
 " Putting coc config separate
 source $HOME/.config/nvim/coc.vim
 set cmdheight=1
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 " 
 " AutoCommands
 " ------------
