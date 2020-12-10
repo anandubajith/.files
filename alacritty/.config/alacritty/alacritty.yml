@@ -4,8 +4,8 @@ window:
     columns: 180
     lines: 60
   padding:
-    x: 6
-    y: 0
+    x: 4
+    y: 6
   decorations: none
 scrolling:
   history: 10000
