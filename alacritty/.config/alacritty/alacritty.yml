@@ -1,8 +1,8 @@
 window:
   dynamic_title: true
   dimensions:
-    columns: 180
-    lines: 60
+    columns: 192
+    lines: 50
   padding:
     x: 4
     y: 6
@@ -21,7 +21,7 @@ font:
   italic:
     family: JetBrains Mono
     style: Italic
-  size: 8
+  size: 12
   offset:
     x: 0
     y: 0
