@@ -1,11 +1,9 @@
 window:
   dynamic_title: true
-  dimensions:
-    columns: 192
-    lines: 50
+  startup_mode: Maximized
   padding:
     x: 4
-    y: 6
+    y: 0
   decorations: none
 scrolling:
   history: 10000
