@@ -50,14 +50,26 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary' 			" Easier commenting
 "Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
-"Plug 'gosukiwi/vim-atom-dark'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ThePrimeagen/vim-be-good'
+Plug 'dense-analysis/ale'
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+"Plug 'ThePrimeagen/vim-be-good'
 Plug 'posva/vim-vue'                    " Vue 
 Plug 'leafgarland/typescript-vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'happycoder97/expos-vim-plugins'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
@@ -107,6 +119,62 @@ nnoremap <leader>ec :tabnew $MYVIMRC<CR>	" Make editing the config easier
 " Commenting
 "nnoremap <C-\> gc
 
+" Ale
+" autocomplete list
+set wildmenu
+set wildmode=list:full
+let g:deoplete#enable_at_startup = 1
+
+" ALE
+let g:ale_emit_conflict_warnings = 0
+let g:ale_linters = {
+      \'javascript': ['eslint'],
+      \'typescript': ['eslint', 'tsserver', 'prettier'],
+      \}
+let g:ale_sign_column_always = 1
+let g:ale_completion_enabled = 0
+let g:ale_completion_tsserver_autoimport = 0
+let g:ale_fixers = {
+      \'javascript': ['eslint'],
+      \'json': ['prettier'],
+      \'typescript': ['eslint', 'prettier'],
+      \'ruby': ['rubocop'],
+      \'markdown': ['prettier'],
+      \}
+
+" asyncomplete
+" preferred keyboard mappings for navigating autocomplete menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+inoremap <expr> <Esc>   pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+
+" autocomplete
+set completeopt+=menuone,preview
+
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+" need to do 
+" npm install -g javascript-typescript-langserver
+" for this to work
+if executable('javascript-typescript-stdio')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'javascript-typescript-stdio',
+    \ 'cmd': {server_info->['javascript-typescript-stdio']},
+    \ 'whitelist': ['typescript', 'javascript', 'typescript.tsx'],
+    \ })
+endif
+call deoplete#custom#option('sources', {
+\ '_': ['ale', 'foobar'],
+\})
+
 " Startify
 let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 
@@ -117,11 +185,7 @@ autocmd filetype python nnoremap <C-r> :w <bar> split <bar> resize 8 <bar> te py
 autocmd filetype asm nnoremap <C-r> :w <bar> te make Q_NO=%:r && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype markdown nnoremap <C-r> :MarkdownPreview<CR>
 
-" Putting coc config separate
-source $HOME/.config/nvim/coc.vim
 set cmdheight=1
-vmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 " 
 " AutoCommands
 " ------------
