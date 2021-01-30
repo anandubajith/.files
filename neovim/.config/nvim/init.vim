@@ -195,6 +195,12 @@ augroup autosourcing
   autocmd!
   autocmd BufWritePost init.vim source %
 augroup END
+
+function! XSM_Jmp()
+    let x = input('Enter Line Number: ')
+    return (x-5)*2 + 2048
+endfunction
+imap <leader>jp <C-R>=XSM_Jmp()<CR>
 " NOTES
 " " then register name, and you can paste through registers
 " Ctrl+6 to toggle between edit points
