@@ -3,7 +3,7 @@
 "
 "
 
-let mapleader = ","				              " Setup leader key
+let mapleader = ","				        " Setup leader key
 set number
 syntax enable
 set hidden
@@ -12,7 +12,7 @@ set incsearch
 set ignorecase
 set cursorline
 set backspace=indent,eol,start confirm
-set ttyfast 				" for speedup
+set ttyfast 				            " for speedup
 set lazyredraw
 set noshowcmd 				
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore

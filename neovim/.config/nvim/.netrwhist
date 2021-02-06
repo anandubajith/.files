@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/anandu/code/certificates/scripts'
+let g:netrw_dirhist_0='/home/anandu/code/certificates'
 let g:netrw_dirhist_9='/home/anandu/code/storilabs/voucher-services'
 let g:netrw_dirhist_8='/home/anandu/code/storilabs/ums-services/src/main'
 let g:netrw_dirhist_7='/home/anandu/code/storilabs/ums-services/src'
@@ -8,4 +10,3 @@ let g:netrw_dirhist_5='/home/anandu/rop/src/export'
 let g:netrw_dirhist_4='/home/anandu/rop/src'
 let g:netrw_dirhist_3='/home/anandu/rop/src/email'
 let g:netrw_dirhist_2='/home/anandu/rop/src'
-let g:netrw_dirhist_1='/home/anandu/rop'
