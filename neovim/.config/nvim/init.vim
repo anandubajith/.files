@@ -12,9 +12,7 @@ set incsearch
 set ignorecase
 set cursorline
 set backspace=indent,eol,start confirm
-nmap <leader><space> :nohlsearch<cr>
-
-set ttyfast 				                    " for speedup
+set ttyfast 				" for speedup
 set lazyredraw
 set noshowcmd 				
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
@@ -29,7 +27,7 @@ set expandtab
 
 source $HOME/.config/nvim/plugins.vim
 
-nnoremap <leader>ec :tabnew $MYVIMRC<CR>  "Make editing the config easier
+" KeyBindings
 
 " Run commands 
 autocmd filetype cpp nnoremap <C-r> :w <bar> te g++ -std=c++14 % -o %:r.out && ./%:r.out<CR> <ESC> :startinsert <CR>
@@ -38,6 +36,9 @@ autocmd filetype python nnoremap <C-r> :w <bar> split <bar> resize 8 <bar> te py
 autocmd filetype asm nnoremap <C-r> :w <bar> te make Q_NO=%:r && ./%:r.out<CR> <ESC> :startinsert <CR>
 autocmd filetype markdown nnoremap <C-r> :MarkdownPreview<CR>
 
+" Make editing config easier
+nnoremap <leader>ec :tabnew $MYVIMRC<CR>  
+nmap <leader><space> :nohlsearch<cr>
 " MisTypes
 command! Q :q
 command! W :w
