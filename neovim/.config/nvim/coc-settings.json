@@ -1,22 +1,21 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"css",
-		"markdown",
-		"javascript",
-		"graphql",
-		"html",
-		"yaml",
-		"json",
-		"python"
-	],
-	"coc.source.emoji.filetypes": [
-		"markdown",
-		"vimwiki"
-	],
-	"python.linting.enabled": true,
-	"python.linting.pylintEnabled": true,
-	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-	"snippets.ultisnips.directories": [
-		"~/.config/nvim/snips"
-	],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python"
+    ],
+    "coc.source.emoji.filetypes": [
+        "markdown"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+    "snippets.ultisnips.directories": [
+        "~/.config/nvim/snips"
+    ]
 }

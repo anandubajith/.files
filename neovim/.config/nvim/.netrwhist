@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/anandu/code/storilabs/voucher-services'
 let g:netrw_dirhist_8='/home/anandu/code/storilabs/ums-services/src/main'
 let g:netrw_dirhist_7='/home/anandu/code/storilabs/ums-services/src'
 let g:netrw_dirhist_6='/home/anandu/code/storilabs/ums-services'
