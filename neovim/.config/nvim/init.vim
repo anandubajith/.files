@@ -48,6 +48,7 @@ Plug 'preservim/nerdtree'			    " we need a fileBrowser
 Plug 'Xuyuanp/nerdtree-git-plugin'		" For git indicators in NerdTree
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary' 			" Easier commenting
+Plug 'nvim-treesitter/nvim-treesitter'
 "Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'gosukiwi/vim-atom-dark'
