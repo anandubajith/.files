@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
-	Plug 'Shougo/echodoc.vim'
 call plug#end()
 
 " FZF
