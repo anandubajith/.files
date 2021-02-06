@@ -1,16 +1,22 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python"],
-
-    "coc.source.emoji.filetypes": ["markdown", "vimwiki"],
-  // python config
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-
-  "snippets.ultisnips.directories":
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
-  "clangd.path": "/home/anandu/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
-
+	"coc.preferences.formatOnSaveFiletypes": [
+		"css",
+		"markdown",
+		"javascript",
+		"graphql",
+		"html",
+		"yaml",
+		"json",
+		"python"
+	],
+	"coc.source.emoji.filetypes": [
+		"markdown",
+		"vimwiki"
+	],
+	"python.linting.enabled": true,
+	"python.linting.pylintEnabled": true,
+	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+	"snippets.ultisnips.directories": [
+		"~/.config/nvim/snips"
+	],
 }
