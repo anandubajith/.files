@@ -44,9 +44,15 @@ command! Q :q
 command! W :w
 cmap w!! w !sudo tee %
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
 
 " Autosouce the config file on update
-augroup autosourcing
+augroup ANANDU 
   autocmd!
+   autocmd BufWritePre * :call TrimWhitespace()
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END

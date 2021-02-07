@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
     Plug 'mhinz/vim-startify'
-    Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " FZF
@@ -39,8 +38,6 @@ let g:lightline = { 'colorscheme': 'onedark' }
 " Startify
 let g:startify_lists = [ { 'type': 'dir', 'header': ['   MRU '. getcwd()] }]
 
-"WhiteSpace
-let g:strip_whitespace_on_save = 1
 
 
 " checks if your terminal has 24-bit color support
