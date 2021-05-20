@@ -7,6 +7,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
     Plug 'mhinz/vim-startify'
+    Plug 'pangloss/vim-javascript'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'fcpg/vim-waikiki'
+    Plug 'junegunn/goyo.vim'
+    Plug 'pangloss/vim-javascript'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'jparise/vim-graphql'
 call plug#end()
 
 " FZF
@@ -45,4 +54,8 @@ if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
+
+let g:waikiki_roots = ['~/vimwiki/']
+let maplocalleader = "\<F7>"
+let g:waikiki_default_maps = 1
 
