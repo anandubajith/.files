@@ -14,3 +14,4 @@ export PATH=~/.npm-packages/bin:$PATH
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias cat="bat"
+ export PATH=~/.npm-global/bin:$PATH

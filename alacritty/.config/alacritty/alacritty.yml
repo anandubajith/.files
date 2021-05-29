@@ -11,13 +11,13 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono Medium
-    style: Regular
+    family: JetBrainsMono NF
+    style: Medium
   bold:
-    family: JetBrains Mono Medium
+    family: JetBrainsMono NF
     style: Bold
   italic:
-    family: JetBrains Mono Medium
+    family: JetBrainsMono NF
     style: Italic
   size: 12
   offset:
