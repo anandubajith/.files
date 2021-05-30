@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-"
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
     "Plug 'gruvbox-community/gruvbox'
 
