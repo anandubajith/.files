@@ -38,6 +38,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'mechatroner/rainbow_csv'
 
     "Plug 'gruvbox-community/gruvbox'
 

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/anandu/code/Provider_POC_Temp/frontend'
+let g:netrw_dirhist_6='/home/anandu/Downloads'
 let g:netrw_dirhist_5='/home/anandu/code/gep/wip'
 let g:netrw_dirhist_4='/home/anandu/code/gep/wip/web'
 let g:netrw_dirhist_3='/home/anandu/code/gep/wip'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/home/anandu/code/gep/wip'
 let g:netrw_dirhist_0='/home/anandu/code/gep/wip/celery'
 let g:netrw_dirhist_9='/home/anandu/code/gep/wip'
 let g:netrw_dirhist_8='/home/anandu/code/gep/wip/web'
-let g:netrw_dirhist_7='/home/anandu/code/gep/wip'
-let g:netrw_dirhist_6='/home/anandu/code/gep/wip/web'
